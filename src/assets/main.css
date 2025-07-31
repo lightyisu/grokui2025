@@ -1,2 +1,6 @@
 @import './base.css';
 @import 'tailwindcss';
+@theme{
+  --color-grokgray-400:rgb(248, 247, 246);
+  --color-grokgray-600:rgb(235, 235, 234)
+}
