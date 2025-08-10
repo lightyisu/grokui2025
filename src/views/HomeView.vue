@@ -15,11 +15,11 @@
           resize="none"
         />
         <div class="tool-box absolute bottom-0 px-6 py-4">
-          <el-button :icon="Search" circle />
+          <el-button circle />
           <el-button type="primary" round>Primary</el-button>
         </div>
         <div class="send-box absolute bottom-0 right-0 px-6 py-4">
-          <el-button :icon="Search" circle />
+          <el-button circle />
         </div>
       </div>
     </div>
