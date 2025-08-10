@@ -64,7 +64,12 @@
 .tools-list .el-icon{
   width: 25px !important;
 }
-
+.queryBar textarea{
+  --el-input-focus-border-color:none;
+  padding: 25px;
+  border-radius: 10px;
+  font-size: 20px;
+}
 
 body {
   min-height: 100vh;

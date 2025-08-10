@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-grokgray-400 flex flex-col items-center py-4">
+  <div class="bg-grokgray-400 border-r-2 border-grokgray-600 flex flex-col items-center py-4">
     <div class="wrapper rounded w-7/8 my-4">
       <img
         src="../assets/grok.svg"
@@ -16,7 +16,7 @@
         >搜索<span class="text-gray-400 ml-1">Ctrl+K</span></el-button
       >
       <div class="tools-text my-4 w-full">
-        <ListItem v-for="(item, index) in list" :title="item.title" :icon="item.icon" :key="index" />
+        <ListItem v-for="(item, index) in list" :title="item.title" :name="item.meta" :icon="item.icon" :key="index" />
       </div>
     </div>
   </div>
@@ -32,12 +32,12 @@ function getImageUrl(name: string) {
   return new URL(`../assets/icons/${name}`, import.meta.url).href
 }
 const list = ref([
-  { icon: getImageUrl('chat.svg'), title: '聊天' },
-  { icon: getImageUrl('voice.svg'), title: '语音' },
-  { icon: getImageUrl('file.svg'), title: '文件' },
-  { icon: getImageUrl('task.svg'), title: '任务' },
-  { icon: getImageUrl('project.svg'), title: '项目' },
-  { icon: getImageUrl('history.svg'), title: '历史记录' },
+  { icon: getImageUrl('chat.svg'), title: '聊天', meta: 'home' },
+  { icon: getImageUrl('voice.svg'), title: '语音', meta: 'voice' },
+  { icon: getImageUrl('file.svg'), title: '文件', meta: 'file' },
+  { icon: getImageUrl('task.svg'), title: '任务', meta: 'task' },
+  { icon: getImageUrl('project.svg'), title: '项目', meta: 'project' },
+  { icon: getImageUrl('history.svg'), title: '历史记录', meta: 'history' },
 ])
 </script>
 <style scoped lang="sass"></style>
