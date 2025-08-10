@@ -15,12 +15,22 @@
           resize="none"
         />
         <div class="tool-box absolute bottom-0 px-6 py-4">
-          <el-button circle />
-          <el-button type="primary" round>Primary</el-button>
+          <el-button circle>
+            <img src="../assets//icons/fileupload.svg" />
+          </el-button>
+          <el-button class="!border-none" round
+            ><img src="../assets/icons/rocket.svg" />&nbsp;自动<span class="m-2"
+              ><ion-icon name="chevron-down-outline"></ion-icon></span
+          ></el-button>
         </div>
         <div class="send-box absolute bottom-0 right-0 px-6 py-4">
-          <el-button circle />
+          <el-button class="send-btn" circle color="black" />
         </div>
+      </div>
+      <div class="more-btns flex justify-center py-4">
+        <el-button plain size="large" round>编辑图像</el-button>
+        <el-button plain size="large" round>新闻播报员</el-button>
+        <el-button plain size="large" round>角色设定</el-button>
       </div>
     </div>
   </div>

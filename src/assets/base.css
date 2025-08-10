@@ -64,6 +64,15 @@
 .tools-list .el-icon{
   width: 25px !important;
 }
+.queryBar button{
+  --el-button-active-border-color:none !important;
+  --el-button-hover-border-color:none !important;
+  --el-button-hover-bg-color:none !important;
+  --el-button-hover-text-color:none !important;
+}
+.queryBar .send-btn:hover{
+  background: black;
+}
 .queryBar textarea{
   --el-input-focus-border-color:none;
   padding: 25px;
