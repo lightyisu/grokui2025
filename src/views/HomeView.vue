@@ -19,11 +19,21 @@
             <img src="../assets//icons/fileupload.svg" />
           </el-button>
           <div class="relative mx-4 mode-select" ref="mode_select">
-            <el-select placeholder="自动" v-model="value" style="width: 120px" ref="selectRef">
+            <el-select v-model="mode_value" style="width: 120px" ref="selectRef">
               <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                <div>{{ item.label }}</div>
-                <div>{{ item.desc }}</div>
+                <div class="out_wrapper flex items-center">
+                  <div class="inline-block p-2">
+                    <ion-icon size="small" style="color: black" :name="item.icon"></ion-icon>
+                  </div>
+                  <div class="text_wrapper flex-col">
+                    <div class="font-bold">{{ item.label }}</div>
+                    <div>{{ item.desc }}</div>
+                  </div>
+                </div>
               </el-option>
+              <template #prefix>
+                <ion-icon size="small" style="color: black" :name="currentModeIcon"></ion-icon>
+              </template>
             </el-select>
           </div>
         </div>
@@ -40,36 +50,42 @@
   </div>
 </template>
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 const mode_select = ref<HTMLDivElement | null>(null)
 const selectRef = ref()
 const textarea = ref('')
 const mode_select_op_show = ref(false)
 
-const value = ref('')
 const options = [
   {
     value: 'Option1',
     label: '自动',
     desc: '选择最佳模式',
+    icon: 'rocket-outline',
   },
   {
     value: 'Option2',
     label: '快速',
     desc: '快速回应(使用Grok3)',
+    icon: 'flash-outline',
   },
   {
     value: 'Option3',
     label: '专家模式',
     desc: '努力思考(使用Grok4)',
+    icon: 'ribbon-outline',
   },
   {
     value: 'Option4',
     label: 'Heavy',
     desc: '专家团队(使用Grok4 Heavy)',
+    icon: 'layers-outline',
   },
 ]
-
+const mode_value = ref(options[0].value)
+const currentModeIcon = computed(() => {
+  return options.find((item) => item.value == mode_value.value)?.icon
+})
 const handleClickOutside = (e: Event) => {
   if (!mode_select.value) return
   if (!mode_select.value.contains(e.target as Node)) {
