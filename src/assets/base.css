@@ -67,7 +67,7 @@
 .queryBar button{
   --el-button-active-border-color:none !important;
   --el-button-hover-border-color:none !important;
-  --el-button-hover-bg-color:none !important;
+  --el-button-hover-bg-color:rgb(240, 237, 237) !important;
   --el-button-hover-text-color:none !important;
 }
 .queryBar .send-btn:hover{
@@ -79,7 +79,24 @@
   border-radius: 10px;
   font-size: 20px;
 }
-
+.el-select__wrapper{
+  box-shadow: none !important;
+}
+.el-select__popper{
+  border-radius: 20px !important;
+  padding: 4px !important;
+}
+.el-select__placeholder{
+  font-weight: bold;
+  color: #504f4f !important;
+}
+.el-select__popper li{
+  line-height: normal;
+  font-weight: bold;
+  border-radius: 15px !important;
+  height: auto;
+  padding: 10px !important;
+}
 body {
   min-height: 100vh;
   color: var(--color-text);
