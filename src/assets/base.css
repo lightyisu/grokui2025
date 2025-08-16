@@ -97,6 +97,44 @@
   height: auto;
   padding: 10px !important;
 }
+.el-select__placeholder{
+  width: auto !important;
+}
+.el-select__input-wrapper.is-hidden {
+  width: auto !important; /* 跟内容走 */
+  min-width: unset !important;
+  height: auto !important; /* 跟内容走 */
+  padding: 0 !important;
+  display: inline-flex !important; /* 保证能和 placeholder 尺寸一致 */
+  align-items: center;
+}
+
+
+
+
+/* 让整个 select 自适应宽度 */
+.el-select {
+  width: auto !important;
+}
+
+.el-select__wrapper {
+  width: auto !important;
+  display: inline-flex; /* 根据内容宽度变化 */
+}
+
+.el-select__selection {
+  width: auto !important;
+  min-width: 0 !important;
+  display: inline-flex !important;
+
+}
+
+.el-select__placeholder {
+  position: static !important; /* 参与布局撑开宽度 */
+  white-space: nowrap; /* 不换行，保持一行 */
+  transform: none !important;
+}
+
 body {
   min-height: 100vh;
   color: var(--color-text);

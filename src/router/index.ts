@@ -5,6 +5,7 @@ import FileView from '@/views/FileView.vue'
 import TaskView from '@/views/TaskView.vue'
 import ProjectView from '@/views/ProjectView.vue'
 import HistoryView from '@/views/HistoryView.vue'
+import ChatView from '@/views/ChatView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,11 @@ const router = createRouter({
       path:'/history',
       name:'history',
       component:HistoryView
+    },
+       {
+      path:'/chat/:id',
+      name:'chat',
+      component:ChatView
     }
   ],
 })
